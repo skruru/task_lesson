@@ -4,10 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  
+  <header class="navbar navbar-dark bg-primary">
+    <h1 class="navbar-brand">タスク管理</h1>
+  </header>
+  <main class="container-fluid my-3">
+    <div>
+      <button class="btn btn-primary js-add" type="button" data-type="task">タスク追加</button>
+      <button type="button" class="btn btn-success js-add" data-type="list">リスト追加</button>
+    </div>
+    <div id="bord">
+      <div class="card list">
+        <div class="card-header" draggable="true">TODO</div>
+        <div class="card-body">
+          <div class="task" draggable="true">タスク</div>
+        </div>
+      </div>
+      <div class="card list">
+        <div class="card-header" draggable="true">DOING</div>
+        <div class="card-body">
+        </div>
+      </div>
+      <div class="card list">
+        <div class="card-header" draggable="true">DONE</div>
+        <div class="card-body">
+        </div>
+      </div>
+      <!-- テンプレート -->
+      <div class="d-none js-template">
+        <div class="card list">
+          <div class="card-header" draggable="true"></div>
+          <div class="card-body"></div>
+        </div>
+        <div class="task" draggable="true"></div>
+      </div>
+    </div>
+    <div id="modal-add" class="mdl d-none
+    ">
+      <div class="mdl-content">
+        <div class="mdl-header"></div>
+        <div class="mdl-body">
+          <input type="text" class="form-control">
+        </div>
+        <div class="mdl-footer">
+          <button type="button" class="btn btn-secondary js-btn-close">閉じる</button>
+          <button type="button" class="btn  btn-primary js-btn-add">追加</button>
+        </div>
+      </div>
+      <div class="mdl-backdrop"></div>
+    </div>
+  </main>
+
   <script src="js/main.js"></script>
 </body>
 </html>
